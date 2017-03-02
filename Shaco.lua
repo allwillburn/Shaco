@@ -137,7 +137,7 @@ OnTick(function (myHero)
 
             if ShacoMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 400) then
 		     if target ~= nil then 
-                         CastTargetSpell(target, _Q)
+                         CastTargetSpell(_Q,target)
                      end
             end
 
@@ -154,7 +154,7 @@ OnTick(function (myHero)
             end
 
 	    if ShacoMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 700) then
-			CastTargetSpell(target, _W)
+			CastTargetSpell(_W,target)
 	    end
 	    
 	    
