@@ -154,7 +154,7 @@ OnTick(function (myHero)
             end
 
 	    if ShacoMenu.Combo.W:Value() and Ready(_W) and ValidTarget(target, 700) then
-			CastTargetSpell(target, _W)
+			CastSkillShot(_Q, target.pos)
 	    end
 	    
 	    
@@ -207,7 +207,7 @@ OnTick(function (myHero)
                 end
 
                 if ShacoMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(closeminion, 700) then
-	        	CastTargetSpell(target, _W)
+	        	CastSkillShot(_Q, target.pos)
 	        end
 
                 if ShacoMenu.LaneClear.E:Value() and Ready(_E) and ValidTarget(closeminion, 187) then
@@ -231,7 +231,7 @@ OnTick(function (myHero)
         end 
         if ShacoMenu.AutoMode.W:Value() then        
           if Ready(_W) and ValidTarget(target, 700) then
-	  	      CastTargetSpell(target, _W)
+	  	      CastSkillShot(_Q, target.pos)
           end
         end
         if ShacoMenu.AutoMode.E:Value() then        
