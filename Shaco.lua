@@ -104,7 +104,7 @@ OnTick(function (myHero)
           if Mix:Mode() == "Harass" then
             if ShacoMenu.Harass.Q:Value() and Ready(_Q) and ValidTarget(target, 400) then
 				if target ~= nil then 
-                                      CastTargetSpell(target, _Q)
+                                      CastSkillShot(_Q, target.pos)
                                 end
             end
 
@@ -137,7 +137,7 @@ OnTick(function (myHero)
 
             if ShacoMenu.Combo.Q:Value() and Ready(_Q) and ValidTarget(target, 400) then
 		     if target ~= nil then 
-                         CastTargetSpell(target, _Q)
+                         CastSkillShot(_Q, target.pos)
                      end
             end
 
@@ -203,7 +203,7 @@ OnTick(function (myHero)
       if Mix:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
 	        if ShacoMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(closeminion, 400) then
-	        	CastTargetSpell(closeminion, _Q)
+	        	CastSkillShot(_Q, target.pos)
                 end
 
                 if ShacoMenu.LaneClear.W:Value() and Ready(_W) and ValidTarget(closeminion, 700) then
@@ -226,7 +226,7 @@ OnTick(function (myHero)
         --AutoMode
         if ShacoMenu.AutoMode.Q:Value() then        
           if Ready(_Q) and ValidTarget(target, 400) then
-		      CastTargetSpell(target, _Q)
+		      CastSkillShot(_Q, target.pos)
           end
         end 
         if ShacoMenu.AutoMode.W:Value() then        
